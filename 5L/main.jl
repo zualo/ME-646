@@ -25,7 +25,7 @@ data = Dict(rpm => CSV.read("EngineLabData2026/$(rpm)DynoRPM.csv", DataFrame, he
 data = sort(data)
 
 function build_engine_conditions(path::String)
-    sheet = XLSX.readxlsx(path)["Sheet1"]
+    sheet = readxlsx(path)["Sheet1"]
     conditions = EngineConditions[]
 
     for row in 3:8
